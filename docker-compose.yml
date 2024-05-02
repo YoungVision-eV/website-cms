@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  payload:
+    ports:
+      - '3000:3000'
+    build:
+      context: .
+    depends_on:
+      - mongo
+    environment:
+      - PAYLOAD_SECRET
+      - DATABASE_URI=mongodb://root:${MONGO_INITDB_ROOT_PASSWORD}@mongo:27017
+    env_file:
+      - .env
+
+  mongo:
+    image: mongo:7.0
+    command:
+      - --storageEngine=wiredTiger
+    volumes:
+      - data:/data/db
+    env_file:
+      - .env
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD
+      
+
+
+volumes:
+  data:
+  node_modules:
