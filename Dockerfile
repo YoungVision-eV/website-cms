@@ -3,7 +3,7 @@ ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 
-COPY ./package.json ./pnpm-lock.yaml /app
+COPY ./package.json ./pnpm-lock.yaml /app/
 WORKDIR /app
 
 FROM base AS prod-deps
