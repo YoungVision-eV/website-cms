@@ -10,7 +10,7 @@ services:
       - mongo
     environment:
       - PAYLOAD_SECRET
-      - DATABASE_URI=mongodb://root:${MONGO_INITDB_ROOT_PASSWORD}@mongo:27017
+      - DATABASE_URI=mongodb://root:${MONGO_INITDB_ROOT_PASSWORD}@mongo:27017/website
     env_file:
       - .env
 
