@@ -10,24 +10,22 @@ services:
       - mongo
     environment:
       - PAYLOAD_SECRET
-      - DATABASE_URI=mongodb://root:${MONGO_INITDB_ROOT_PASSWORD}@mongo:27017/website
+      - DATABASE_URI=mongodb://mongo:27017/website
     env_file:
       - .env
 
   mongo:
     image: mongo:7.0
+    ports:
+      - '27017:27017'
     command:
       - --storageEngine=wiredTiger
     volumes:
       - data:/data/db
     env_file:
       - .env
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD
       
 
 
 volumes:
   data:
-  node_modules:
