@@ -1,3 +1,4 @@
+# port: 3000
 version: '3'
 
 services:
@@ -7,7 +8,8 @@ services:
     depends_on:
       - mongo
     environment:
-      - PAYLOAD_SECRET
+      - SERVICE_FQDN_PAYLOAD
+      - PAYLOAD_SECRET=$SERVICE_PASSWORD_PAYLOAD
       - DATABASE_URI=mongodb://mongo:27017/website
     volumes:
       - 'payload-uploads:/app/uploads'
