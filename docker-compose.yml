@@ -2,8 +2,6 @@ version: '3'
 
 services:
   payload:
-    ports:
-      - '3000:3000'
     build:
       context: .
     depends_on:
@@ -11,21 +9,26 @@ services:
     environment:
       - PAYLOAD_SECRET
       - DATABASE_URI=mongodb://mongo:27017/website
+    volumes:
+      - 'payload-uploads:/app/uploads'
     env_file:
       - .env
+    restart: unless-stopped
 
   mongo:
     image: mongo:7.0
-    ports:
-      - '27017:27017'
     command:
       - --storageEngine=wiredTiger
     volumes:
-      - data:/data/db
+      - 'payload-mongo-data:/data/db'
+      - 'payload-mongo-config:/data/configdb'
     env_file:
       - .env
+    restart: unless-stopped
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongo mongo:27017/website --quiet
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 40s 
       
-
-
-volumes:
-  data:
