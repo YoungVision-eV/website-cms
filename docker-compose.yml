@@ -12,7 +12,7 @@ services:
       - PAYLOAD_SECRET=$SERVICE_PASSWORD_PAYLOAD
       - DATABASE_URI=mongodb://mongo:27017/website
     volumes:
-      - 'payload-uploads:/app/uploads'
+      - 'payload-uploads:/app/dist/uploads'
     env_file:
       - .env
     restart: unless-stopped
