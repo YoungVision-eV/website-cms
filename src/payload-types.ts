@@ -59,7 +59,7 @@ export interface Event {
   } | null;
   content_html?: string | null;
   slug: string;
-  image?: {
+  heroImage?: {
     relationTo: 'media';
     value: string | Media;
   } | null;

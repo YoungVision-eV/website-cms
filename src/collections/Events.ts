@@ -44,7 +44,7 @@ export const Events: CollectionConfig = {
       required: true,
     },
     {
-      name: 'image',
+      name: 'heroImage',
       type: 'relationship',
       relationTo: ['media'],
     },
