@@ -43,5 +43,10 @@ export const Events: CollectionConfig = {
       type: "text",
       required: true,
     },
+    {
+      name: 'image',
+      type: 'relationship',
+      relationTo: ['media'],
+    },
   ],
 };
