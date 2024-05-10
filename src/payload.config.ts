@@ -6,6 +6,7 @@ import { webpackBundler } from '@payloadcms/bundler-webpack'
 import { slateEditor } from '@payloadcms/richtext-slate'
 import { buildConfig } from 'payload/config'
 import { Events } from './collections/Events'
+import { Media } from './collections/Media'
 
 import Users from './collections/Users'
 
@@ -15,7 +16,7 @@ export default buildConfig({
     bundler: webpackBundler(),
   },
   editor: slateEditor({}),
-  collections: [Users, Events],
+  collections: [Users, Events, Media],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
