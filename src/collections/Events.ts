@@ -44,6 +44,11 @@ export const Events: CollectionConfig = {
       required: true,
     },
     {
+      name: "calendarCover",
+      type: "relationship",
+      relationTo: ["media"],
+    },
+    {
       name: 'heroImage',
       type: 'relationship',
       relationTo: ['media'],

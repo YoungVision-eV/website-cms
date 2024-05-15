@@ -2,6 +2,9 @@ import { CollectionConfig } from 'payload/types'
 
 export const Media: CollectionConfig = {
     slug: 'media',
+    admin: {
+        useAsTitle: 'title',
+    },
     access: {
         read: () => true,
     },
@@ -10,9 +13,6 @@ export const Media: CollectionConfig = {
         staticDir: 'uploads',
         adminThumbnail: 'thumbnail',
         mimeTypes: ['image/*'],
-    },
-    admin: {
-        useAsTitle: 'title',
     },
     fields: [
         {
