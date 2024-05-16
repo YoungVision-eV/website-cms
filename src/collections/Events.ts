@@ -125,7 +125,7 @@ export const Events: CollectionConfig = {
     {
       name: "slug",
       type: "text",
-      required: true,
+      required: false,
       admin: {
         description: ({ value }: { value?: unknown }) =>
           `Erreichbar unter: https://youngvision.org/events/${value ?? ""}`,
@@ -135,6 +135,7 @@ export const Events: CollectionConfig = {
       name: "calendarCover",
       type: "relationship",
       relationTo: ["media"],
+      required: true,
     },
     {
       name: "heroImage",
