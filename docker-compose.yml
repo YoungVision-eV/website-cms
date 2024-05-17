@@ -8,7 +8,6 @@ services:
     depends_on:
       - mongo
     environment:
-      - SERVICE_FQDN_PAYLOAD
       - PAYLOAD_SECRET=$SERVICE_PASSWORD_PAYLOAD
       - DATABASE_URI=mongodb://mongo:27017/website
     volumes:
@@ -16,6 +15,12 @@ services:
     env_file:
       - .env
     restart: unless-stopped
+    healthcheck:
+      test: 'wget --spider http://localhost:3000/api/health || exit 1'
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
 
   mongo:
     image: mongo:7.0
