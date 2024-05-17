@@ -13,7 +13,8 @@ services:
     volumes:
       - 'payload-uploads:/app/dist/uploads'
     env_file:
-      - .env
+      - path: '.env'
+        required: false
     restart: unless-stopped
     healthcheck:
       test: 'wget --spider http://localhost:3000/api/health || exit 1'
@@ -30,7 +31,8 @@ services:
       - 'payload-mongo-data:/data/db'
       - 'payload-mongo-config:/data/configdb'
     env_file:
-      - .env
+      - path: '.env'
+        required: false
     restart: unless-stopped
     healthcheck:
       test: echo 'db.runCommand("ping").ok' | mongo mongo:27017/website --quiet
@@ -38,4 +40,7 @@ services:
       timeout: 10s
       retries: 5
       start_period: 40s 
-      
+volumes:
+  payload-uploads:
+  payload-mongo-data:
+  payload-mongo-config:
