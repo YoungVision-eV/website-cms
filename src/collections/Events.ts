@@ -123,6 +123,11 @@ export const Events: CollectionConfig = {
       ],
     },
     {
+      name: "registrationLink",
+      type: "text",
+      required: false,
+    },
+    {
       name: "slug",
       type: "text",
       required: false,
