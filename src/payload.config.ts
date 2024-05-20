@@ -29,4 +29,13 @@ export default buildConfig({
   db: mongooseAdapter({
     url: process.env.DATABASE_URI,
   }),
+  endpoints: [
+    {
+      path: '/health',
+      method: 'get',
+      handler: (_req, res) => {
+        res.status(200).send('OK')
+      },
+    },
+  ]
 })
