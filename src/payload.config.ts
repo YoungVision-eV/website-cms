@@ -19,6 +19,8 @@ export default buildConfig({
   collections: [Users, Events, Media],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
+    // disbales declare statement when generating types so there is no ts error when using them in the website repo
+    declare: false,
   },
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
