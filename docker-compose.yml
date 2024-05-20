@@ -8,7 +8,7 @@ services:
     depends_on:
       - mongo
     environment:
-      - PAYLOAD_SECRET=$SERVICE_PASSWORD_PAYLOAD
+      - PAYLOAD_SECRET
       - DATABASE_URI=mongodb://mongo:27017/website
     volumes:
       - 'payload-uploads:/app/dist/uploads'
