@@ -9,6 +9,7 @@ export const Events: CollectionConfig = {
   slug: "events",
   admin: {
     useAsTitle: "title",
+    preview: (doc) => doc?.slug != null ? `http://localhost:5173/events/${doc.slug}` : null,
   },
   access: {
     read: () => true,
@@ -23,11 +24,21 @@ export const Events: CollectionConfig = {
     {
       name: "start",
       type: "date",
+      admin: {
+        date: {
+          displayFormat: "dd.MM.yyyy",
+        }
+      },
       required: true,
     },
     {
       name: "end",
       type: "date",
+      admin: {
+        date: {
+          displayFormat: "dd.MM.yyyy",
+        }
+      },
       required: true,
     },
     {
