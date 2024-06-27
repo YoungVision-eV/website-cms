@@ -22,7 +22,7 @@ importers:
         version: 0.9.2(@lexical/clipboard@0.13.1(lexical@0.13.1))(payload@2.22.2(typescript@4.9.5)(webpack@5.92.1(@swc/core@1.6.1)(webpack-cli@4.10.0)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@4.9.5)(yjs@13.6.15)
       '@payloadcms/richtext-slate':
         specifier: ^1.0.0
-        version: 1.5.1(payload@2.22.2(typescript@4.9.5)(webpack@5.92.1(@swc/core@1.6.1)(webpack-cli@4.10.0)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 1.5.2(payload@2.22.2(typescript@4.9.5)(webpack@5.92.1(@swc/core@1.6.1)(webpack-cli@4.10.0)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
@@ -818,8 +818,8 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@payloadcms/richtext-slate@1.5.1':
-    resolution: {integrity: sha512-dP4Vtn4nI5YS5G7XlL8y6aleS3659cDqqoT8X2340xBULXqAix5iAI+6ICjeZOj8Dyt70IW7UZ79BRchK02/Uw==}
+  '@payloadcms/richtext-slate@1.5.2':
+    resolution: {integrity: sha512-0rq9zgOhpPHO5kcFlajld3h5beww6jjYwHZH5sxgtuen3bz6pepIr3agg650R/aE1+sfez0NdpwoB0gb7FX03g==}
     peerDependencies:
       payload: ^2.3.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -1162,9 +1162,6 @@ packages:
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
-
-  '@types/lodash@4.17.0':
-    resolution: {integrity: sha512-t7dhREVv6dbNj0q17X12j7yDG4bD/DHYX7o5/DbDxobP0HnGPgpRz2Ej77aL7TZT3DSw13fqUTj8J4mMnqa7WA==}
 
   '@types/lodash@4.17.5':
     resolution: {integrity: sha512-MBIOHVZqVqgfro1euRDWX7OO0fBVUUMrN6Pwm8LQsz8cWhEpihlvR70ENj3f40j58TNxZaWv2ndSkInykNBBJw==}
@@ -3322,6 +3319,10 @@ packages:
     resolution: {integrity: sha512-tDNIz22aBzCDxLtVH++VnTfzxlfeK5CbqohpSqpJgj1Wg/cQbStNAz3NuqCs5vV+pjBsK4x4pN9HlVh7rcYRiA==}
     engines: {node: '>=0.6'}
 
+  qs@6.12.1:
+    resolution: {integrity: sha512-zWmv4RSuB9r2mYQw3zxQuHWeU+42aKi1wWig/j4ele4ygELZ7PEO6MM7rim9oAQH2A5MWfsAVf/jPvTPgCbvUQ==}
+    engines: {node: '>=0.6'}
+
   qs@6.4.1:
     resolution: {integrity: sha512-LQy1Q1fcva/UsnP/6Iaa4lVeM49WiOitu2T4hZCyA/elLKu37L99qcBJk4VCCk+rdLvnMzfKyiN3SZTqdAZGSQ==}
     engines: {node: '>=0.6'}
@@ -5267,7 +5268,7 @@ snapshots:
     dependencies:
       body-scroll-lock: 3.1.5
       focus-trap: 6.9.4
-      qs: 6.11.2
+      qs: 6.12.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-transition-group: 4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -5588,7 +5589,7 @@ snapshots:
       - typescript
       - yjs
 
-  '@payloadcms/richtext-slate@1.5.1(payload@2.22.2(typescript@4.9.5)(webpack@5.92.1(@swc/core@1.6.1)(webpack-cli@4.10.0)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@payloadcms/richtext-slate@1.5.2(payload@2.22.2(typescript@4.9.5)(webpack@5.92.1(@swc/core@1.6.1)(webpack-cli@4.10.0)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@faceless-ui/modal': 2.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       i18next: 22.5.1
@@ -6052,8 +6053,6 @@ snapshots:
   '@types/is-hotkey@0.1.10': {}
 
   '@types/json-schema@7.0.15': {}
-
-  '@types/lodash@4.17.0': {}
 
   '@types/lodash@4.17.5': {}
 
@@ -8510,6 +8509,10 @@ snapshots:
     dependencies:
       side-channel: 1.0.6
 
+  qs@6.12.1:
+    dependencies:
+      side-channel: 1.0.6
+
   qs@6.4.1: {}
 
   queue-tick@1.0.1: {}
@@ -8969,7 +8972,7 @@ snapshots:
     dependencies:
       '@juggle/resize-observer': 3.4.0
       '@types/is-hotkey': 0.1.10
-      '@types/lodash': 4.17.0
+      '@types/lodash': 4.17.5
       direction: 1.0.4
       is-hotkey: 0.1.8
       is-plain-object: 5.0.0
