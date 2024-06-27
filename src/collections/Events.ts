@@ -13,8 +13,6 @@ export const Events: CollectionConfig = {
   },
   admin: {
     useAsTitle: "title",
-    preview: (doc) =>
-      doc?.slug != null ? `http://localhost:5173/events/${doc.slug}` : null,
   },
   access: {
     read: () => true,
