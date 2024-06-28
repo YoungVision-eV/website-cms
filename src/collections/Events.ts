@@ -94,9 +94,6 @@ export const Events: CollectionConfig = {
       admin: {
         description: "Will be shown above the content",
       },
-      validate: (value: string, options) => {
-        return value.length > 5 ? true : "Content title is required";
-      }
     },
     {
       name: "content",
