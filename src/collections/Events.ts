@@ -89,11 +89,20 @@ export const Events: CollectionConfig = {
       admin: {
         description: "Will be shown above the content",
       },
+      validate: (value: string, options) => {
+        return value.length > 5 ? true : "Content title is required";
+      }
     },
     {
       name: "content",
       type: "richText",
       required: false,
+      validate: (value: string, options) => {
+        if (options.data.slug && !value) {
+          return "Bitte füge einen Text hinzu oder deaktiviere die Eventseite (slug löschen).";
+        }
+        return true;
+      },
       editor: lexicalEditor({
         features: ({ defaultFeatures }) => [
           ...defaultFeatures,
