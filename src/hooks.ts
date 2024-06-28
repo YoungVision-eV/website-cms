@@ -1,6 +1,8 @@
 export const redeploy = async () => {
-  await fetch(
-    "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/5d30d67d-725a-4c5f-9b60-83f1a457ac9d",
-    { method: "POST" }
-  );
+  // uses Cloudflare Deploy Hooks
+  // see https://developers.cloudflare.com/pages/configuration/deploy-hooks/
+  // In local development we don't want any redeployments though
+  if (process.env.CLOUDFLARE_DEPLOY_HOOK) {
+    await fetch(process.env.CLOUDFLARE_DEPLOY_HOOK, { method: "POST" });
+  }
 };
