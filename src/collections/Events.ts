@@ -96,6 +96,12 @@ export const Events: CollectionConfig = {
       name: "content",
       type: "richText",
       required: false,
+      validate: (value: string, options) => {
+        if (options.data.slug && !value) {
+          return "Bitte füge einen Text hinzu oder deaktiviere die Eventseite (slug löschen).";
+        }
+        return true;
+      },
       editor: lexicalEditor({
         features: ({ defaultFeatures }) => [
           ...defaultFeatures,
