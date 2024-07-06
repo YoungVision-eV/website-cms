@@ -4,12 +4,15 @@ import {
   lexicalEditor,
   lexicalHTML,
 } from "@payloadcms/richtext-lexical";
+import { redeploy } from "../hooks";
 
 export const Events: CollectionConfig = {
   slug: "events",
+  hooks: {
+    afterChange: [redeploy],
+  },
   admin: {
     useAsTitle: "title",
-    preview: (doc) => doc?.slug != null ? `http://localhost:5173/events/${doc.slug}` : null,
   },
   access: {
     read: () => true,
@@ -29,7 +32,7 @@ export const Events: CollectionConfig = {
       admin: {
         date: {
           displayFormat: "dd.MM.yyyy",
-        }
+        },
       },
       required: true,
     },
@@ -39,7 +42,7 @@ export const Events: CollectionConfig = {
       admin: {
         date: {
           displayFormat: "dd.MM.yyyy",
-        }
+        },
       },
       required: true,
     },
