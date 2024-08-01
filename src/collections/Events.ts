@@ -163,5 +163,10 @@ export const Events: CollectionConfig = {
       type: "relationship",
       relationTo: ["media"],
     },
+    {
+      name: "sponsorLogo",
+      type: "relationship",
+      relationTo: ["media"],
+    },
   ],
 };
