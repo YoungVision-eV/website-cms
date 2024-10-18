@@ -71,8 +71,8 @@ async function create_events(images: (String | Number)[], payload: Payload) {
     collection: 'events',
     data: {
       title: 'Fun Test Evnet',
-      start: '2024-11-01',
-      end: '2024-11-05',
+      start: '2024-10-01',
+      end: '2024-10-05',
       shortDescription: 'If it was a real event it would be fun',
       address: { street: 'Beispiel Straße 42', zip: '420', city: 'Funkytown' },
       audience: '3-6 Jahre',
@@ -89,8 +89,8 @@ async function create_events(images: (String | Number)[], payload: Payload) {
     collection: 'events',
     data: {
       title: 'Test Event',
-      start: '2025-11-29',
-      end: '2025-12-03',
+      start: '2026-11-29',
+      end: '2026-12-03',
       shortDescription: 'This is a test event',
       address: { street: 'Tolle Straße', zip: '1234', city: 'Fantasie Stadt' },
       audience: '99-111 Jahre',
