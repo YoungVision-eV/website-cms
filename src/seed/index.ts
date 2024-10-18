@@ -154,7 +154,11 @@ async function create_events(images: (String | Number)[], payload: Payload) {
         }
       ],
       slug: 'test-event',
-      registrationLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      registrationLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      sponsorLogo: {
+        relationTo: 'media',
+        value: images[1],
+      }
     },
     depth: 0,
   });
