@@ -12,24 +12,28 @@ export const seed = async (payload: Payload): Promise<void> => {
     return ;
   }
   
-  payload.logger.info('Seeding sample data...')
+  payload.logger.info('Seeding sample data...');
 
-  await payload.create({
-    collection: 'users',
-    data: {
+  const admin = {
       email: 'admin@test.com',
       password: 'password',
       admin: true,
-    },
-  })
+  };
   await payload.create({
     collection: 'users',
-    data: {
+    data: admin,
+  });
+  payload.logger.info(`Created ${admin.admin ? 'Admin': 'User without admin rights'}:\neamil:'${admin.email}'\npassword:'${admin.password}'`);
+  const user = {
       email: 'user@test.com',
       password: 'password',
       admin: false,
-    },
-  })
+  };
+  await payload.create({
+    collection: 'users',
+    data: user,
+  });
+  payload.logger.info(`Created ${user.admin ? 'Admin': 'User without admin rights'}:\neamil:'${user.email}'\npassword:'${user.password}'`);
 
   const cat = await payload.create({
     collection: 'media',
@@ -38,7 +42,7 @@ export const seed = async (payload: Payload): Promise<void> => {
         altText: 'zwei Katzen',
     },
     filePath: `${__dirname}/cat-party.webp`
-  })
+  });
 
   await payload.create({
     collection: 'events',
@@ -57,7 +61,7 @@ export const seed = async (payload: Payload): Promise<void> => {
         },
     },
     depth: 0,
-  })
+  });
 
   // Add additional seed data here
 }
