@@ -184,6 +184,7 @@ async function create_events(images: (String | Number)[], payload: Payload) {
 
 export const seed_if_empty = async (payload: Payload): Promise<void> => {
   if (!(await all_collections_empty(payload))) {
+    payload.logger.info("Skipping seeding, because there is already some data");
     return;
   }
 
