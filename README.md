@@ -13,6 +13,7 @@ To spin up the project locally, follow these steps:
 
 1. First clone the repo
 1. Then `cd website-cms && cp .env.example .env`
+1. Then `docker run -d -p 27017:27017 mongo:latest`
 1. Next `pnpm install && pnpm run dev` (or `docker-compose up`, see [Docker](#docker))
 1. Now `open http://localhost:3000/admin` to access the admin panel
 1. Create your first admin user using the form on the page
