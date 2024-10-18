@@ -133,6 +133,26 @@ async function create_events(images: (String | Number)[], payload: Payload) {
         relationTo: 'media',
         value: images[1],
       },
+      team: [
+        {
+          name: "Alice",
+          job: "Spec Example User",
+          bio: "Das bin ich",
+          image: {
+            relationTo: 'media',
+            value: images[1],
+          },
+        },
+        {
+          name: "Bob",
+          job: "Spec Example User",
+          bio: "Das bin ich",
+          image: {
+            relationTo: 'media',
+            value: images[1],
+          },
+        }
+      ],
       slug: 'test-event',
       registrationLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
