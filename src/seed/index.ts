@@ -158,7 +158,7 @@ async function create_events(images: (String | Number)[], payload: Payload) {
   });
 }
 
-export const seed = async (payload: Payload): Promise<void> => {
+export const seed_if_empty = async (payload: Payload): Promise<void> => {
   if (!(await all_collections_empty(payload))) {
     return;
   }

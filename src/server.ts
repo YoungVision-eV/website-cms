@@ -1,6 +1,6 @@
 import express from 'express'
 import payload from 'payload'
-import { seed } from './seed'
+import { seed_if_empty } from './seed'
 
 require('dotenv').config()
 const app = express()
@@ -16,10 +16,8 @@ const start = async () => {
     secret: process.env.PAYLOAD_SECRET,
     express: app,
     onInit: async () => {
-      payload.logger.info(`Payload Admin URL: http://localhost:3000${payload.getAdminURL()}`)
-      if (process.env.PAYLOAD_SEED === 'true') {
-        await seed(payload)
-      }
+      payload.logger.info(`Payload Admin URL: http://localhost:3000${payload.getAdminURL()}`);
+      await seed_if_empty(payload);
     },
   })
 
