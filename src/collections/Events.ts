@@ -44,17 +44,24 @@ export const Events: CollectionConfig = {
           displayFormat: "dd.MM.yyyy",
         },
       },
+      validate: (value: string, options) => {
+        if (options.siblingData.start > value) {
+          return "Das Enddatum muss nach dem Startdatum sein.";
+        } else {
+          return true;
+        }
+      },
+      required: true,
+    },
+    {
+      name: "shortDescription",
+      type: "text",
       required: true,
     },
     {
       name: "timetable",
       type: "relationship",
       relationTo: ["media"],
-    },
-    {
-      name: "shortDescription",
-      type: "text",
-      required: true,
     },
     {
       name: "address",
