@@ -37,5 +37,19 @@ export default buildConfig({
         res.status(200).send('OK')
       },
     },
-  ]
+  ],
+  localization: {
+    locales: [
+      {
+        label: 'Deutsch',
+        code: 'de',
+      },
+      {
+        label: 'English',
+        code: 'en',
+      },
+    ],
+    defaultLocale: 'de',
+    fallback: true,
+  },
 })

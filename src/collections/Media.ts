@@ -1,4 +1,4 @@
-import { CollectionConfig } from 'payload/types'
+import { CollectionConfig, fieldIsLocalized } from 'payload/types'
 
 export const Media: CollectionConfig = {
     slug: 'media',
@@ -23,6 +23,7 @@ export const Media: CollectionConfig = {
         {
             name: 'altText',
             type: 'text',
+            localized: true,
             required: true,
         }
     ],

@@ -24,6 +24,7 @@ export const Events: CollectionConfig = {
     {
       name: "title",
       type: "text",
+      localized: true,
       required: true,
     },
     {
@@ -54,6 +55,7 @@ export const Events: CollectionConfig = {
     {
       name: "shortDescription",
       type: "text",
+      localized: true,
       required: true,
     },
     {
@@ -80,17 +82,20 @@ export const Events: CollectionConfig = {
     {
       name: "audience",
       type: "text",
+      localized: true,
       required: true,
     },
     {
       name: "cost",
       type: "text",
+      localized: true,
       required: true,
     },
     {
       name: "contentTitle",
       type: "text",
       required: true,
+      localized: true,
       admin: {
         description: "Will be shown above the content",
       },
@@ -98,6 +103,7 @@ export const Events: CollectionConfig = {
     {
       name: "content",
       type: "richText",
+      localized: true,
       required: false,
       editor: lexicalEditor({
         features: ({ defaultFeatures }) => [
@@ -129,11 +135,13 @@ export const Events: CollectionConfig = {
             description:
               "For example Yoga Teacher or Student. Shown below the name.",
           },
+          localized: true,
           required: true,
         },
         {
           name: "bio",
           type: "text",
+          localized: true,
           required: true,
         },
       ],
