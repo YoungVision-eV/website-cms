@@ -59,9 +59,29 @@ export const Events: CollectionConfig = {
       required: true,
     },
     {
-      name: "timetable",
+      name: "calendarCover",
       type: "relationship",
       relationTo: ["media"],
+      required: true,
+    },
+    {
+      name: "slug",
+      type: "text",
+      required: false,
+      unique: true,
+      admin: {
+        description: ({ value }: { value?: unknown }) =>
+          value
+            ? `Eventseite erreichbar unter: https://youngvision.org/events/${value ?? ""} Entferne den slug um keine Eventseit zu generieren.`
+            : "Es wird keine Eventseite erstellt, weil der slug leer ist."
+      },
+      validate(value: string, options) {
+        if (value && value.match(/^[a-z0-9][a-z0-9\-]+[a-z0-9]$/) == null) {
+          return "Es sind nur Kleinbuchstaben(a-z), Ziffern(0-9) und Bindestriche(-) erlaubt. Der slug muss mindestens 3 Zeichen lang sein. Bindestriche dürfen nich am Anfang oder Ende sein.";
+        } else {
+          return true;
+        }
+      }
     },
     {
       name: "address",
@@ -157,32 +177,12 @@ export const Events: CollectionConfig = {
       required: false,
     },
     {
-      name: "slug",
-      type: "text",
-      required: false,
-      unique: true,
-      admin: {
-        description: ({ value }: { value?: unknown }) =>
-          value
-            ? `Eventseite erreichbar unter: https://youngvision.org/events/${value ?? ""} Entferne den slug um keine Eventseit zu generieren.`
-            : "Es wird keine Eventseite erstellt, weil der slug leer ist."
-      },
-      validate(value: string, options) {
-        if (value && value.match(/^[a-z0-9][a-z0-9\-]+[a-z0-9]$/) == null) {
-          return "Es sind nur Kleinbuchstaben(a-z), Ziffern(0-9) und Bindestriche(-) erlaubt. Der slug muss mindestens 3 Zeichen lang sein. Bindestriche dürfen nich am Anfang oder Ende sein.";
-        } else {
-          return true;
-        }
-      }
-    },
-    {
-      name: "calendarCover",
+      name: "heroImage",
       type: "relationship",
       relationTo: ["media"],
-      required: true,
     },
     {
-      name: "heroImage",
+      name: "timetable",
       type: "relationship",
       relationTo: ["media"],
     },
