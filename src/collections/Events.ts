@@ -164,6 +164,13 @@ export const Events: CollectionConfig = {
         description: ({ value }: { value?: unknown }) =>
           `Erreichbar unter: https://youngvision.org/events/${value ?? ""}`,
       },
+      validate(value: string, options) {
+        if (value.match(/^[a-z0-9][a-z0-9\-]+[a-z0-9]$/) == null) {
+          return "Es sind nur Kleinbuchstaben(a-z), Ziffern(0-9) und Bindestriche(-) erlaubt. Der slug muss mindestens 3 Zeichen lang sein. Bindestriche dürfen nich am Anfang oder Ende sein.";
+        } else {
+          return true;
+        }
+      }
     },
     {
       name: "calendarCover",
