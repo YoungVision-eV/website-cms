@@ -21,32 +21,34 @@ Before you begin, ensure you have the following installed:
    cd website-cms
    ```
 
-2. **Install dependencies**
+1. **Install dependencies**
    ```bash
    pnpm install
    ```
 
-3. **Environment Setup**
+1. **Environment Setup**
    - Copy the `.env.example` file to `.env`
-   - Update the environment variables as needed:
-     ```
-     MONGODB_URI=mongodb://localhost/youngvision-cms
-     PAYLOAD_SECRET=your-secret-key
-     ```
 
-4. **Development**
+1. **MongoDB Setup**
+   - Start MongoDB for example with Docker:
+     ```bash
+     docker run --name mongodb-website-cms -p 27017:27017 mongo:latest
+     ```
+   - If needed update the `DATABASE_URI` in the `.env` file
+
+1. **Development**
    - Start the development server:
      ```bash
      pnpm dev
      ```
    - The CMS will be available at `http://localhost:3000/admin`
 
-5. **Build for Production**
+1. **Build for Production**
    ```bash
    pnpm build
    ```
 
-6. **Start Production Server**
+1. **Start Production Server**
    ```bash
    pnpm serve
    ```
