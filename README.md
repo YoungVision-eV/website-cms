@@ -1,48 +1,66 @@
-# Payload Blank Template
+# CMS for YoungVision.org - Built with Payload CMS
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-A blank template for [Payload](https://github.com/payloadcms/payload) to help you get up and running quickly. This repo may have been created by running `npx create-payload-app@latest` and selecting the "blank" template or by cloning this template on [Payload Cloud](https://payloadcms.com/new/clone/blank).
+This is the content management system (CMS) for YoungVision.org, built using [Payload CMS](https://payloadcms.com/). It provides a powerful and flexible backend for managing the website's content.
 
-See the official [Examples Directory](https://github.com/payloadcms/payload/tree/main/examples) for details on how to use Payload in a variety of different ways.
+## Prerequisites
 
-## Development
+Before you begin, ensure you have the following installed:
+- Node.js (v16 or higher)
+- pnpm
+- MongoDB
 
-To spin up the project locally, follow these steps:
+## Getting Started
 
-1. First clone the repo
-1. Then `cd website-cms && cp .env.example .env`
-1. Next `pnpm install && pnpm run dev` (or `docker-compose up`, see [Docker](#docker))
-1. Now `open http://localhost:3000/admin` to access the admin panel
-1. Create your first admin user using the form on the page
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/YoungVision-eV/website-cms.git
+   cd website-cms
+   ```
 
-That's it! Changes made in `./src` will be reflected in your app.
+2. **Install dependencies**
+   ```bash
+   pnpm install
+   ```
 
-### Docker
+3. **Environment Setup**
+   - Copy the `.env.example` file to `.env`
+   - Update the environment variables as needed:
+     ```
+     MONGODB_URI=mongodb://localhost/youngvision-cms
+     PAYLOAD_SECRET=your-secret-key
+     ```
 
-Alternatively, you can use [Docker](https://www.docker.com) to spin up this project locally. To do so, follow these steps:
+4. **Development**
+   - Start the development server:
+     ```bash
+     pnpm dev
+     ```
+   - The CMS will be available at `http://localhost:3000/admin`
 
-1. Follow [steps 1 and 2 from above](#development), the docker-compose file will automatically use the `.env` file in your project root
-1. Next run `docker-compose up`
-1. Follow [steps 4 and 5 from above](#development) to login and create your first admin user
+5. **Build for Production**
+   ```bash
+   pnpm build
+   ```
 
-That's it! The Docker instance will help you get up and running quickly while also standardizing the development environment across your teams.
+6. **Start Production Server**
+   ```bash
+   pnpm serve
+   ```
 
-## Production
+## Scripts
 
-To run Payload in production, you need to build and serve the Admin panel. To do so, follow these steps:
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm serve` - Start production server
+- `pnpm generate:types` - Generate TypeScript types
 
-1. First invoke the `payload build` script by running `pnpm run build` in your project root. This creates a `./build` directory with a production-ready admin bundle.
-1. Then run `pnpm run serve` to run Node in production and serve Payload from the `./build` directory.
+## Contributing
 
-### Deployment
-
-The easiest way to deploy your project is to use [Payload Cloud](https://payloadcms.com/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also deploy your app manually, check out the [deployment documentation](https://payloadcms.com/docs/production/deployment) for full details.
-
-## Questions
-
-If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
 ## Contributors ✨
 
