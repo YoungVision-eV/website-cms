@@ -12,6 +12,7 @@ Before you begin, ensure you have the following installed:
 - Node.js (v16 or higher)
 - pnpm
 - MongoDB
+- docker / podman
 
 ## Getting Started
 
@@ -59,10 +60,6 @@ Before you begin, ensure you have the following installed:
 - `pnpm build` - Build for production
 - `pnpm serve` - Start production server
 - `pnpm generate:types` - Generate TypeScript types
-
-## Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
 ## Contributors ✨
 
