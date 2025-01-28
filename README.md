@@ -4,9 +4,9 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-This is the content management system (CMS) for YoungVision.org, built using [Payload CMS](https://payloadcms.com/). It provides a powerful and flexible backend for managing the website's content.
+This is the content management system (CMS) for [YoungVision.org](https://www.youngvision.org/) ([Front-End Repo](https://github.com/YoungVision-eV/website)), built using [Payload CMS](https://payloadcms.com/). It is used to create and manage the events displayed on YoungVision.org.
 
-## Prerequisites
+## 📦 Prerequisites
 
 Before you begin, ensure you have the following installed:
 - Node.js (v16 or higher)
@@ -14,7 +14,7 @@ Before you begin, ensure you have the following installed:
 - MongoDB
 - docker / podman
 
-## Getting Started
+## 🏃 Getting Started
 
 1. **Clone the repository**
    ```bash
@@ -54,14 +54,14 @@ Before you begin, ensure you have the following installed:
    pnpm serve
    ```
 
-## Scripts
+## 📜 Scripts
 
 - `pnpm dev` - Start development server
 - `pnpm build` - Build for production
 - `pnpm serve` - Start production server
 - `pnpm generate:types` - Generate TypeScript types
 
-## Contributors ✨
+## ✨ Contributors 
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
