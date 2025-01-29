@@ -54,12 +54,19 @@ Before you begin, ensure you have the following installed:
    pnpm serve
    ```
 
+## 📂 Folder Structure
+
+- `src/collections/` - Collection definitions
+- `src/seed/` - Script and media for seeding sample data
+- `src/payload.config.ts` - Payload configuration
+- `src/server.ts` - Express server
+
 ## 📜 Scripts
 
 - `pnpm dev` - Start development server
 - `pnpm build` - Build for production
 - `pnpm serve` - Start production server
-- `pnpm generate:types` - Generate TypeScript types
+- `pnpm generate:types` - Generate TypeScript types (which are used in the [frontend](https://github.com YoungVision-eV/website))
 
 ## ✨ Contributors 
 
