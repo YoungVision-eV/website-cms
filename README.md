@@ -66,7 +66,7 @@ Before you begin, ensure you have the following installed:
 - `pnpm dev` - Start development server
 - `pnpm build` - Build for production
 - `pnpm serve` - Start production server
-- `pnpm generate:types` - Generate TypeScript types (which are used in the [frontend](https://github.com YoungVision-eV/website))
+- `pnpm generate:types` - Generate TypeScript types (which are used in the [Front-End](https://github.com/YoungVision-eV/website))
 
 ## ✨ Contributors 
 
