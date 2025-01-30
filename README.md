@@ -4,7 +4,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-This is the content management system (CMS) for [YoungVision.org](https://www.youngvision.org/) ([Front-End Repo](https://github.com/YoungVision-eV/website)), built using [Payload CMS](https://payloadcms.com/). It is used to create and manage the events displayed on YoungVision.org.
+This is the content management system (CMS) for [youngvision.org](https://www.youngvision.org/) ([repository](https://github.com/YoungVision-eV/website)), built using [Payload CMS](https://payloadcms.com/). It is currently used to create and manage the events displayed on our website.
 
 ## 📦 Prerequisites
 
