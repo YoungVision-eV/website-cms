@@ -11,7 +11,6 @@ This is the content management system (CMS) for [youngvision.org](https://www.yo
 Before you begin, ensure you have the following installed:
 - Node.js (v16 or higher)
 - pnpm
-- MongoDB
 - docker / podman
 
 ## 🏃 Getting Started
