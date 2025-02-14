@@ -55,6 +55,7 @@ async function create_events(images: (String | Number)[], payload: Payload) {
       audience: 'A-Z',
       cost: '123€',
       contentTitle: 'Silvester Whoop whoop',
+      content: 'Silvester gonna be good',
       calendarCover: {
         relationTo: 'media',
         value: images[0],
