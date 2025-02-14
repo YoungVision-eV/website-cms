@@ -35,5 +35,14 @@
     "prettier": "^3.5.1",
     "ts-node": "^10.0.0",
     "typescript": "^5.0.0"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "@swc/core",
+      "es5-ext"
+    ],
+    "onlyBuiltDependencies": [
+      "sharp"
+    ]
   }
 }
