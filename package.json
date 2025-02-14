@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "dist/server.js",
   "license": "MIT",
-  "packageManager": "pnpm@9.13.0",
+  "packageManager": "pnpm@9.15.5",
   "scripts": {
     "dev": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts nodemon",
     "build:payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload build",
