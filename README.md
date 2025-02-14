@@ -1,7 +1,9 @@
 # CMS for YoungVision.org - Built with Payload CMS
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This is the content management system (CMS) for [youngvision.org](https://www.youngvision.org/) ([repository](https://github.com/YoungVision-eV/website)), built using [Payload CMS](https://payloadcms.com/). It is currently used to create and manage the events displayed on our website.
@@ -9,6 +11,7 @@ This is the content management system (CMS) for [youngvision.org](https://www.yo
 ## 📦 Prerequisites
 
 Before you begin, ensure you have the following installed:
+
 - Node.js (v16 or higher)
 - pnpm
 - docker / podman
@@ -16,20 +19,24 @@ Before you begin, ensure you have the following installed:
 ## 🏃 Getting Started
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/YoungVision-eV/website-cms.git
    cd website-cms
    ```
 
 1. **Install dependencies**
+
    ```bash
    pnpm install
    ```
 
 1. **Environment Setup**
+
    - Copy the `.env.example` file to `.env`
 
 1. **MongoDB Setup**
+
    - Start MongoDB for example with Docker:
      ```bash
      docker run --name mongodb-website-cms -p 27017:27017 mongo:latest
@@ -37,6 +44,7 @@ Before you begin, ensure you have the following installed:
    - If needed update the `DATABASE_URI` in the `.env` file
 
 1. **Development**
+
    - Start the development server:
      ```bash
      pnpm dev
@@ -44,6 +52,7 @@ Before you begin, ensure you have the following installed:
    - The CMS will be available at `http://localhost:3000/admin`
 
 1. **Build for Production**
+
    ```bash
    pnpm build
    ```
@@ -67,7 +76,7 @@ Before you begin, ensure you have the following installed:
 - `pnpm serve` - Start production server
 - `pnpm generate:types` - Generate TypeScript types (which are used in the [Frontend](https://github.com/YoungVision-eV/website/blob/main/src/data/payload-types.ts))
 
-## ✨ Contributors 
+## ✨ Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 

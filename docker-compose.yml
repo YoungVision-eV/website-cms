@@ -11,13 +11,13 @@ services:
       - PAYLOAD_SECRET
       - DATABASE_URI=mongodb://mongo:27017/website
     volumes:
-      - 'payload-uploads:/app/dist/uploads'
+      - "payload-uploads:/app/dist/uploads"
     env_file:
-      - path: '.env'
+      - path: ".env"
         required: false
     restart: unless-stopped
     healthcheck:
-      test: 'wget --spider http://localhost:3000/api/health || exit 1'
+      test: "wget --spider http://localhost:3000/api/health || exit 1"
       interval: 10s
       timeout: 10s
       retries: 5
@@ -28,10 +28,10 @@ services:
     command:
       - --storageEngine=wiredTiger
     volumes:
-      - 'payload-mongo-data:/data/db'
-      - 'payload-mongo-config:/data/configdb'
+      - "payload-mongo-data:/data/db"
+      - "payload-mongo-config:/data/configdb"
     env_file:
-      - path: '.env'
+      - path: ".env"
         required: false
     restart: unless-stopped
     healthcheck:
@@ -39,7 +39,7 @@ services:
       interval: 10s
       timeout: 10s
       retries: 5
-      start_period: 40s 
+      start_period: 40s
 volumes:
   payload-uploads:
   payload-mongo-data:
