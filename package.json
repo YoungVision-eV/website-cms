@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "dist/server.js",
   "license": "MIT",
-  "packageManager": "pnpm@9.13.0",
+  "packageManager": "pnpm@10.4.0",
   "scripts": {
     "dev": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts nodemon",
     "build:payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload build",
@@ -35,5 +35,14 @@
     "prettier": "^3.5.1",
     "ts-node": "^10.0.0",
     "typescript": "^5.0.0"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "@swc/core",
+      "es5-ext"
+    ],
+    "onlyBuiltDependencies": [
+      "sharp"
+    ]
   }
 }
