@@ -32,11 +32,9 @@ Before you begin, ensure you have the following installed:
    ```
 
 1. **Environment Setup**
-
    - Copy the `.env.example` file to `.env`
 
 1. **MongoDB Setup**
-
    - Start MongoDB for example with Docker:
      ```bash
      docker run --name mongodb-website-cms -p 27017:27017 mongo:latest
@@ -44,7 +42,6 @@ Before you begin, ensure you have the following installed:
    - If needed update the `DATABASE_URI` in the `.env` file
 
 1. **Development**
-
    - Start the development server:
      ```bash
      pnpm dev
