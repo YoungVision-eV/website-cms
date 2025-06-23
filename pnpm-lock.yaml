@@ -47,7 +47,7 @@ importers:
         version: 3.1.4
       prettier:
         specifier: ^3.5.1
-        version: 3.5.1
+        version: 3.6.0
       ts-node:
         specifier: ^10.0.0
         version: 10.9.2(@swc/core@1.6.1)(@types/node@20.14.9)(typescript@5.7.3)
@@ -2641,8 +2641,8 @@ packages:
   lexical@0.13.1:
     resolution: {integrity: sha512-jaqRYzVEfBKbX4FwYpd/g+MyOjRaraAel0iQsTrwvx3hyN0bswUZuzb6H6nGlFSjcdrc77wKpyKwoWj4aUd+Bw==}
 
-  lib0@0.2.99:
-    resolution: {integrity: sha512-vwztYuUf1uf/1zQxfzRfO5yzfNKhTtgOByCruuiQQxWQXnPb8Itaube5ylofcV0oM0aKal9Mv+S1s1Ky0UYP1w==}
+  lib0@0.2.109:
+    resolution: {integrity: sha512-jP0gbnyW0kwlx1Atc4dcHkBbrVAkdHjuyHxtClUPYla7qCmwIif1qZ6vQeJdR5FrOVdn26HvQT0ko01rgW7/Xw==}
     engines: {node: '>=16'}
     hasBin: true
 
@@ -3307,8 +3307,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  prettier@3.5.1:
-    resolution: {integrity: sha512-hPpFQvHwL3Qv5AdRvBFMhnKo4tYxp0ReXiPn2bxkiohEX6mBeBwEpBSQTkD458RaaDKQMYSp4hX4UtfUTA5wDw==}
+  prettier@3.6.0:
+    resolution: {integrity: sha512-ujSB9uXHJKzM/2GBuE0hBOUgC77CN3Bnpqa+g80bkv3T3A93wL/xlzDATHhnhkzifz/UE2SNOvmbTz5hSkDlHw==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -7728,7 +7728,7 @@ snapshots:
 
   lexical@0.13.1: {}
 
-  lib0@0.2.99:
+  lib0@0.2.109:
     dependencies:
       isomorphic.js: 0.2.5
 
@@ -8543,7 +8543,7 @@ snapshots:
 
   prettier@2.8.8: {}
 
-  prettier@3.5.1: {}
+  prettier@3.6.0: {}
 
   pretty-error@4.0.0:
     dependencies:
@@ -9650,6 +9650,6 @@ snapshots:
 
   yjs@13.6.15:
     dependencies:
-      lib0: 0.2.99
+      lib0: 0.2.109
 
   yn@3.1.1: {}
