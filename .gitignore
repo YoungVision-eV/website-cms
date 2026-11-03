@@ -1,7 +1,9 @@
 build
 dist
+/.next/
+/next-env.d.ts
+/tsconfig.tsbuildinfo
 /media
 node_modules
 .DS_Store
 .env
-src/uploads
