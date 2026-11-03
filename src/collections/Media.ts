@@ -1,4 +1,4 @@
-import { CollectionConfig } from 'payload/types';
+import type { CollectionConfig } from 'payload';
 
 export const Media: CollectionConfig = {
   slug: 'media',
@@ -9,8 +9,6 @@ export const Media: CollectionConfig = {
     read: () => true,
   },
   upload: {
-    staticURL: '/media',
-    staticDir: 'uploads',
     adminThumbnail: 'thumbnail',
     mimeTypes: ['image/*'],
   },
