@@ -4,6 +4,8 @@ dist
 /next-env.d.ts
 /tsconfig.tsbuildinfo
 /media
+/src/payload-types.ts
+/src/generated-schema.graphql
 node_modules
 .DS_Store
 .env
