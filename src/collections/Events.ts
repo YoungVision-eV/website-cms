@@ -1,4 +1,4 @@
-import { CollectionConfig } from 'payload/types';
+import type { CollectionConfig } from 'payload';
 import { HTMLConverterFeature, lexicalEditor, lexicalHTML } from '@payloadcms/richtext-lexical';
 import { redeploy } from '../hooks';
 
@@ -40,7 +40,7 @@ export const Events: CollectionConfig = {
           displayFormat: 'dd.MM.yyyy',
         },
       },
-      validate: (value: string, options) => {
+      validate: (value: any, options: any) => {
         if (options.siblingData.start > value) {
           return 'Das Enddatum muss nach dem Startdatum sein.';
         } else {
@@ -66,10 +66,9 @@ export const Events: CollectionConfig = {
       required: false,
       unique: true,
       admin: {
-        description: ({ value }: { value?: unknown }) =>
-          value
-            ? `Eventseite erreichbar unter: https://youngvision.org/events/${value ?? ''} Entferne den slug um keine Eventseite zu generieren.`
-            : 'Es wird keine Eventseite erstellt, weil der slug leer ist.',
+        components: {
+          Description: '@/components/SlugDescription#SlugDescription',
+        },
       },
       validate(value: string, options) {
         if (value && value.match(/^[a-z0-9][a-z0-9\-]+[a-z0-9]$/) == null) {
@@ -122,7 +121,7 @@ export const Events: CollectionConfig = {
       name: 'content',
       type: 'richText',
       required: false,
-      validate: (value: string, options) => {
+      validate: (value: any, options: any) => {
         if (options.data.slug && !value) {
           return 'Bitte füge einen Text hinzu oder deaktiviere die Eventseite (slug löschen).';
         }

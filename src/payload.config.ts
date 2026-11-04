@@ -1,41 +1,49 @@
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-import { payloadCloud } from '@payloadcms/plugin-cloud';
+import { payloadCloudPlugin } from '@payloadcms/payload-cloud';
 import { mongooseAdapter } from '@payloadcms/db-mongodb';
-import { webpackBundler } from '@payloadcms/bundler-webpack';
-import { slateEditor } from '@payloadcms/richtext-slate';
-import { buildConfig } from 'payload/config';
+import { lexicalEditor } from '@payloadcms/richtext-lexical';
+import { buildConfig } from 'payload';
+import sharp from 'sharp';
+
 import { Events } from './collections/Events';
 import { Media } from './collections/Media';
-
 import Users from './collections/Users';
+import { seed_if_empty } from './seed';
+
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
 
 export default buildConfig({
   admin: {
     user: Users.slug,
-    bundler: webpackBundler(),
+    importMap: {
+      baseDir: path.resolve(dirname),
+    },
   },
-  editor: slateEditor({}),
+  editor: lexicalEditor(),
   collections: [Users, Events, Media],
+  secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
-    outputFile: path.resolve(__dirname, 'payload-types.ts'),
+    outputFile: path.resolve(dirname, 'payload-types.ts'),
     // disbales declare statement when generating types so there is no ts error when using them in the website repo
     declare: false,
   },
   graphQL: {
-    schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
+    schemaOutputFile: path.resolve(dirname, 'generated-schema.graphql'),
   },
-  plugins: [payloadCloud()],
+  plugins: [payloadCloudPlugin()],
   db: mongooseAdapter({
-    url: process.env.DATABASE_URI,
+    url: process.env.DATABASE_URI || '',
   }),
+  sharp,
+  onInit: seed_if_empty,
   endpoints: [
     {
       path: '/health',
       method: 'get',
-      handler: (_req, res) => {
-        res.status(200).send('OK');
-      },
+      handler: () => new Response('OK', { status: 200 }),
     },
   ],
 });

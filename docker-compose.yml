@@ -11,7 +11,7 @@ services:
       - PAYLOAD_SECRET
       - DATABASE_URI=mongodb://mongo:27017/website
     volumes:
-      - 'payload-uploads:/app/dist/uploads'
+      - 'payload-uploads:/app/media'
     env_file:
       - path: '.env'
         required: false
