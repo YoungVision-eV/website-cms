@@ -10,6 +10,7 @@ import sharp from 'sharp';
 import { Events } from './collections/Events';
 import { Media } from './collections/Media';
 import Users from './collections/Users';
+import { migrations } from './migrations';
 import { seed_if_empty } from './seed';
 
 const filename = fileURLToPath(import.meta.url);
@@ -36,6 +37,8 @@ export default buildConfig({
   plugins: [payloadCloudPlugin()],
   db: mongooseAdapter({
     url: process.env.DATABASE_URI || '',
+    // automatically runs pending migrations on connect in production
+    prodMigrations: migrations,
   }),
   sharp,
   onInit: seed_if_empty,
