@@ -1,10 +1,10 @@
-import { Payload } from 'payload';
+import type { Payload } from 'payload';
 
 async function all_collections_empty(payload: Payload): Promise<boolean> {
   const count_users = await payload.count({ collection: 'users' });
   const count_events = await payload.count({ collection: 'events' });
   const count_media = await payload.count({ collection: 'media' });
-  return count_events.totalDocs == 0 && count_events.totalDocs == 0 && count_media.totalDocs == 0;
+  return count_users.totalDocs == 0 && count_events.totalDocs == 0 && count_media.totalDocs == 0;
 }
 
 async function create_user(email: String, password: String, is_admin: boolean, payload: Payload) {
@@ -13,7 +13,7 @@ async function create_user(email: String, password: String, is_admin: boolean, p
     data: {
       email: email,
       password: password,
-      amdin: is_admin,
+      admin: is_admin,
     },
   });
   payload.logger.info(
@@ -21,8 +21,8 @@ async function create_user(email: String, password: String, is_admin: boolean, p
   );
 }
 
-async function create_media(payload: Payload): Promise<(String | Number)[]> {
-  let images: (String | Number)[];
+async function create_media(payload: Payload): Promise<(string | number)[]> {
+  let images: (string | number)[];
   images = [];
   const cats = await payload.create({
     collection: 'media',
@@ -45,7 +45,7 @@ async function create_media(payload: Payload): Promise<(String | Number)[]> {
   return images;
 }
 
-async function create_events(images: (String | Number)[], payload: Payload) {
+async function create_events(images: (string | number)[], payload: Payload) {
   await payload.create({
     collection: 'events',
     data: {
@@ -57,7 +57,35 @@ async function create_events(images: (String | Number)[], payload: Payload) {
       audience: 'A-Z',
       cost: '123€',
       contentTitle: 'Silvester Whoop whoop',
-      content: 'Silvester gonna be good',
+      content: {
+        root: {
+          children: [
+            {
+              children: [
+                {
+                  detail: 0,
+                  format: 0,
+                  mode: 'normal',
+                  style: '',
+                  text: 'Silvester gonna be good',
+                  type: 'text',
+                  version: 1,
+                },
+              ],
+              direction: 'ltr',
+              format: '',
+              indent: 0,
+              type: 'paragraph',
+              version: 1,
+            },
+          ],
+          direction: 'ltr',
+          format: '',
+          indent: 0,
+          type: 'root',
+          version: 1,
+        },
+      },
       calendarCover: {
         relationTo: 'media',
         value: images[0],
