@@ -1,3 +1,5 @@
+import path from 'path';
+
 import type { Payload } from 'payload';
 
 async function all_collections_empty(payload: Payload): Promise<boolean> {
@@ -30,7 +32,7 @@ async function create_media(payload: Payload): Promise<(string | number)[]> {
       title: 'Cats',
       altText: 'Katzen Party',
     },
-    filePath: `${__dirname}/cat-party.webp`,
+    filePath: path.join(process.cwd(), 'src/seed/cat-party.webp'),
   });
   images.push(cats.id);
   const missing_texture = await payload.create({
@@ -39,7 +41,7 @@ async function create_media(payload: Payload): Promise<(string | number)[]> {
       title: 'Missing Texture',
       altText: 'missing texture',
     },
-    filePath: `${__dirname}/missing_textures.webp`,
+    filePath: path.join(process.cwd(), 'src/seed/missing_textures.webp'),
   });
   images.push(missing_texture.id);
   return images;

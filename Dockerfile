@@ -41,6 +41,8 @@ RUN chown nextjs:nodejs /app/media
 # https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+# Sample images used by the seed script
+COPY --from=builder /app/src/seed ./src/seed
 
 USER nextjs
 
