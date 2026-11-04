@@ -40,7 +40,7 @@ export const Events: CollectionConfig = {
           displayFormat: 'dd.MM.yyyy',
         },
       },
-      validate: (value: string, options) => {
+      validate: (value: any, options: any) => {
         if (options.siblingData.start > value) {
           return 'Das Enddatum muss nach dem Startdatum sein.';
         } else {
@@ -121,7 +121,7 @@ export const Events: CollectionConfig = {
       name: 'content',
       type: 'richText',
       required: false,
-      validate: (value: string, options) => {
+      validate: (value: any, options: any) => {
         if (options.data.slug && !value) {
           return 'Bitte füge einen Text hinzu oder deaktiviere die Eventseite (slug löschen).';
         }
