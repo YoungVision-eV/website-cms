@@ -6,13 +6,13 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-This is the content management system (CMS) for [youngvision.org](https://www.youngvision.org/) ([repository](https://github.com/YoungVision-eV/website)), built using [Payload CMS](https://payloadcms.com/). It is currently used to create and manage the events displayed on our website.
+This is the content management system (CMS) for [youngvision.org](https://www.youngvision.org/) ([repository](https://github.com/YoungVision-eV/website)), built using [Payload CMS](https://payloadcms.com/) 3 (on top of [Next.js](https://nextjs.org/)). It is currently used to create and manage the events displayed on our website.
 
 ## 📦 Prerequisites
 
 Before you begin, ensure you have the following installed:
 
-- Node.js (v16 or higher)
+- Node.js (^22.23.4 or >=24.22.1)
 - pnpm
 - docker / podman
 
@@ -59,22 +59,25 @@ Before you begin, ensure you have the following installed:
 
 1. **Start Production Server**
    ```bash
-   pnpm serve
+   pnpm start
    ```
 
 ## 📂 Folder Structure
 
+- `src/app/` - Next.js app serving the admin panel and API routes
 - `src/collections/` - Collection definitions
+- `src/components/` - Custom admin components
+- `src/migrations/` - Database migrations
 - `src/seed/` - Script and media for seeding sample data
 - `src/payload.config.ts` - Payload configuration
-- `src/server.ts` - Express server
 
 ## 📜 Scripts
 
 - `pnpm dev` - Start development server
 - `pnpm build` - Build for production
-- `pnpm serve` - Start production server
+- `pnpm start` - Start production server
 - `pnpm generate:types` - Generate TypeScript types (which are used in the [Frontend](https://github.com/YoungVision-eV/website/blob/main/src/data/payload-types.ts))
+- `pnpm payload` - Payload CLI (e.g. `pnpm payload migrate` to run database migrations)
 
 ## ✨ Contributors
 
